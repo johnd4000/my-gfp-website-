@@ -1,0 +1,4 @@
+Photography goes in this folder.
+
+Every image position on the site is currently a labelled placeholder box.
+See README.md > "Adding images" for how to swap them in.

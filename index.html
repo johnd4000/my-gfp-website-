@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partners in Planning | Green Financial Planning, Melbourne</title>
+<meta name="description" content="Partners in Planning is a Melbourne financial planning practice specialising in values-aligned, sustainable advice — retirement, superannuation, investment and insurance strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>
+  /* Enable scroll-reveal ONLY when we can actually drive it. Browsers without
+     IntersectionObserver, and anyone who prefers reduced motion, never get the
+     hidden starting state — so content can never be stranded invisible. */
+  if ('IntersectionObserver' in window &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js');
+  }
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="header">
+  <div class="container header__inner">
+    <!-- LOGO SLOT — replace this <a class="brand"> block with your logo:
+         <a href="index.html"><img src="assets/logo/logo.svg" alt="Partners in Planning" class="brand__img"></a> -->
+    <a class="brand" href="index.html">
+      Partners in Planning
+      <span class="brand__sub">Green Financial Planning</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html" aria-current="page">Home</a>
+      <a class="nav__link" href="about.html">About Us</a>
+      <div class="nav__item" data-subnav>
+        <a class="nav__link" href="services.html">Our Services</a>
+        <button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+          <span class="sr-only">Our Services pages</span>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nav__sub" id="services-sub">
+          <li><a href="investing.html">Investing</a></li>
+          <li><a href="financial-planning.html">Financial Planning</a></li>
+          <li><a href="retirement-and-super.html">Retirement and Super</a></li>
+        </ul>
+      </div>
+      <a class="nav__link" href="contact.html">Contact Us</a>
+    </nav>
+
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="sr-only">Menu</span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a class="mobile-nav__link" href="index.html">Home</a>
+  <a class="mobile-nav__link" href="about.html">About Us</a>
+  <a class="mobile-nav__link" href="services.html">Our Services</a>
+  <a class="mobile-nav__link mobile-nav__link--sub" href="investing.html">Investing</a>
+  <a class="mobile-nav__link mobile-nav__link--sub" href="financial-planning.html">Financial Planning</a>
+  <a class="mobile-nav__link mobile-nav__link--sub" href="retirement-and-super.html">Retirement and Super</a>
+  <a class="mobile-nav__link" href="contact.html">Contact Us</a>
+</nav>
+
+<main id="main">
+
+  <!-- ============================ SLIDESHOW HERO ========================
+       Images live in the markup, not in a JS array or JSON file, so the
+       first slide renders even if JavaScript never runs and search engines
+       and link-preview scrapers can see them. site.js only swaps which one
+       carries .is-active.
+
+       The photographs are decorative — the headline carries the meaning —
+       so every alt is empty and the whole stage is aria-hidden. Announcing
+       "photograph 3 of 5" every seven seconds would interrupt a screen
+       reader user mid-sentence, repeatedly, to tell them nothing useful.
+
+       To change a photograph, swap the src. Nothing else needs editing.
+       ==================================================================== -->
+  <section class="hero hero--slides">
+    <div class="hero__slides" data-hero-slides aria-hidden="true">
+      <img class="hero__slide is-active" src="assets/img/slide-1.jpg" alt=""
+           width="1440" height="960" fetchpriority="high" decoding="async">
+      <img class="hero__slide" src="assets/img/slide-2.jpg" alt=""
+           width="1440" height="960" loading="lazy" decoding="async">
+      <img class="hero__slide" src="assets/img/slide-3.jpg" alt=""
+           width="1440" height="960" loading="lazy" decoding="async">
+      <img class="hero__slide" src="assets/img/slide-4.jpg" alt=""
+           width="1440" height="960" loading="lazy" decoding="async">
+      <img class="hero__slide" src="assets/img/slide-5.jpg" alt=""
+           width="1440" height="960" loading="lazy" decoding="async">
+    </div>
+
+    <div class="hero__scrim hero__scrim--media" aria-hidden="true"></div>
+
+    <div class="container hero__content hero__content--center">
+      <h1 class="hero__brand">
+        Partners in Planning
+        <span class="hero__brand-est">Est. 2010</span>
+        <span class="hero__brand-sub">Green Financial Planning</span>
+      </h1>
+      <div class="hero__actions hero__actions--center">
+        <a class="btn btn--primary" href="contact.html">Book an introduction</a>
+      </div>
+    </div>
+
+    <!-- WCAG 2.2.2: slides advancing every 7s is automatic motion running
+         past five seconds, so it needs a pause control. Shown by JS only
+         while the slideshow is actually advancing. -->
+    <button class="video-toggle" type="button" data-slides-toggle hidden>
+      <span class="video-toggle__icon" aria-hidden="true"></span>
+      <span class="video-toggle__text">Pause slideshow</span>
+    </button>
+
+    <a class="scroll-cue" href="#intro" aria-label="Scroll to content">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 5v14M6 13l6 6 6-6" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ============================ STATEMENT HERO ============================ -->
+  <section class="hero" id="intro">
+    <div class="hero__scrim-art" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="eyebrow hero__eyebrow">Melbourne &middot; Australia</p>
+      <h2 class="hero__title">Wealth that reflects what you value</h2>
+      <p class="lede hero__lede">
+        Independent financial planning for people who want their money working as hard
+        on their future as it does on the world their family will inherit.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="contact.html">Book an introduction</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SERVICES ============================ -->
+  <!-- Sage tint rather than dark: this now sits directly under the dark
+       statement hero, and two dark surfaces in a row read as one slab.
+       The forest photo sits under a graded sage wash, so it reads as a soft
+       texture rather than a second hero. Decorative, so alt="" and hidden
+       from screen readers. Lazy-loaded: it's two full screens down. -->
+  <section class="section on-tint section--photo">
+    <img class="section__photo" src="assets/img/services-bg.jpg" alt=""
+         width="1600" height="1104" loading="lazy" decoding="async" aria-hidden="true">
+    <div class="section__wash" aria-hidden="true"></div>
+    <div class="container">
+      <!-- A real heading element, not a styled paragraph: this is the only
+           heading in the section, so it has to carry the document outline. -->
+      <div class="narrow reveal" style="margin-bottom: var(--space-16);">
+        <h2 class="eyebrow eyebrow--display">Our Services</h2>
+      </div>
+
+      <!-- card-grid--3up forces a single row of three from 880px up, and a
+           single column below it — three across is unreadable on a phone. -->
+      <div class="card-grid card-grid--3up reveal-group">
+        <a class="card card--link" href="retirement-and-super.html">
+          <svg class="card__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 21h18M5 21V10l7-5 7 5v11M10 21v-6h4v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="card__title">Retirement and Super</h3>
+          <p class="card__body">
+            Before you start planning your retirement, there are some key factors to
+            consider.
+          </p>
+        </a>
+
+        <a class="card card--link" href="financial-planning.html">
+          <svg class="card__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M15.5 8.5l-2.2 4.8-4.8 2.2 2.2-4.8z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="card__title">Financial Planning</h3>
+          <p class="card__body">
+            The starting point to great financial advice is catering to your specific
+            needs and goals.
+          </p>
+        </a>
+
+        <a class="card card--link" href="investing.html">
+          <svg class="card__icon" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 19V9m5 10V5m5 14v-7m5 7V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <h3 class="card__title">Investing</h3>
+          <p class="card__body">
+            For you and many other Australians, a secure financial future is a top
+            priority.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ INTRODUCTION ============================ -->
+  <section class="section">
+    <div class="container">
+      <div class="split reveal">
+        <div class="stack-8">
+          <div>
+            <p class="eyebrow">About Partners in Planning</p>
+            <h2 class="heading">Financial advice tailored to your values</h2>
+          </div>
+          <p class="lede">
+            We are a Melbourne-based financial planning practice working with
+            professionals, families and business owners who want clarity about their
+            future, and who care where their money is invested along the way.
+          </p>
+          <p class="body-text">
+            Our process starts with you. We take the time to understand what matters to
+            you most, then build a financial strategy around your values, one that
+            moves you confidently toward financial security.
+          </p>
+          <div>
+            <a class="link-arrow" href="about.html">
+              Read our story
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="split__media">
+          <div class="media-frame">
+            <img src="assets/img/about-stream.jpg"
+                 alt="A sunlit stream running through dense green forest"
+                 width="1000" height="1500" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHY CHOOSE US ============================ -->
+  <!-- Carries the sage tint so it stays visually distinct from the cream
+       introduction above it, preserving the cream / tint / dark rhythm. -->
+  <section class="section on-tint">
+    <div class="container">
+      <div class="narrow reveal">
+        <h2 class="heading">Why Choose Us?</h2>
+
+        <div class="stack-6 mt-12">
+          <p class="lede">
+            We firmly believe in our motto &lsquo;Not all financial planners are built
+            the same&rsquo;.
+          </p>
+          <p class="body-text">
+            We believe in the importance of unbiased financial advice. To ensure that
+            advice is truly in your best interests, it must be free from conflicts of
+            interest.
+          </p>
+          <p class="body-text">
+            Many financial planning firms claim to be &lsquo;privately owned or
+            self-licensed,&rsquo; but that doesn&rsquo;t necessarily mean they offer
+            genuinely independent advice.
+          </p>
+          <p class="body-text">
+            At Partners in Planning, we proudly maintain our 100% true independence
+            &mdash; we do not accept commissions on any financial products, including
+            insurance. Our only compensation comes directly from you, our clients. This
+            ensures that we work solely in your best interest.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================ SUSTAINABLE INVESTING ============================ -->
+  <section class="section">
+    <div class="container">
+      <div class="split split--reverse reveal">
+        <div class="stack-8">
+          <div>
+            <p class="eyebrow">The green in our name</p>
+            <h2 class="heading">Values-aligned investing, without the guesswork</h2>
+          </div>
+          <p class="lede">
+            Sustainable investing has a marketing problem. Plenty of funds carry the
+            label; far fewer can show you what they actually hold.
+          </p>
+          <p class="body-text">
+            We look past the badge to the underlying holdings, screening methodology
+            and disclosure quality, so the portfolio you end up with genuinely matches
+            the values you told us mattered. Where a sustainable option would
+            compromise your objectives, we will tell you that too.
+          </p>
+        </div>
+        <div class="split__media">
+          <div class="media-frame">
+            <img src="assets/img/sustainable-grasses.jpg"
+                 alt="Dry grasses and wildflowers on a hillside under a cloudy sky"
+                 width="1000" height="1500" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CTA ============================ -->
+  <section class="section on-dark">
+    <div class="container narrow text-center reveal">
+      <p class="eyebrow">Next step</p>
+      <h2 class="heading">Start with a conversation, not a commitment</h2>
+      <p class="lede mx-auto mt-8" style="margin-inline:auto;">
+        The first meeting is at our cost and carries no obligation. If we are not the
+        right fit, we will say so and point you somewhere that is.
+      </p>
+      <div class="mt-12" style="display:flex; gap:var(--space-4); justify-content:center; flex-wrap:wrap;">
+        <a class="btn btn--primary" href="contact.html">Book an introduction</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__title">Partners in Planning</p>
+        <p style="max-width:32ch;">
+          Green financial planning for Melbourne families, professionals and
+          business owners.
+        </p>
+      </div>
+      <div>
+        <p class="footer__title">Explore</p>
+        <ul class="footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Legal</p>
+        <ul class="footer__list">
+          <li><a href="#">Financial Services Guide</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Complaints</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p>
+        <strong>[Legal entity name] Pty Ltd ABN [00 000 000 000]</strong> is a
+        Corporate Authorised Representative (No. [000000]) of
+        [Licensee name] Pty Ltd, AFSL [000000].
+      </p>
+      <p class="footer__disclaimer">
+        The information on this website is general in nature only and does not take
+        into account your personal objectives, financial situation or needs. Before
+        acting on it, consider whether it is appropriate for you and read the relevant
+        Product Disclosure Statement. Past performance is not a reliable indicator of
+        future performance.
+      </p>
+      <p>&copy; <span id="year">2026</span> Partners in Planning. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

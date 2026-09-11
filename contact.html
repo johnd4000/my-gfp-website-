@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Partners in Planning, Melbourne</title>
+<meta name="description" content="Book a no-cost introductory conversation with Partners in Planning, a green financial planning practice in Melbourne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>
+  /* Enable scroll-reveal ONLY when we can actually drive it. Browsers without
+     IntersectionObserver, and anyone who prefers reduced motion, never get the
+     hidden starting state — so content can never be stranded invisible. */
+  if ('IntersectionObserver' in window &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js');
+  }
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="header">
+  <div class="container header__inner">
+    <!-- LOGO SLOT -->
+    <a class="brand" href="index.html">
+      Partners in Planning
+      <span class="brand__sub">Green Financial Planning</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="about.html">About Us</a>
+      <div class="nav__item" data-subnav>
+        <a class="nav__link" href="services.html">Our Services</a>
+        <button class="nav__sub-toggle" type="button" aria-expanded="false" aria-controls="services-sub">
+          <span class="sr-only">Our Services pages</span>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nav__sub" id="services-sub">
+          <li><a href="investing.html">Investing</a></li>
+          <li><a href="financial-planning.html">Financial Planning</a></li>
+          <li><a href="retirement-and-super.html">Retirement and Super</a></li>
+        </ul>
+      </div>
+      <a class="nav__link" href="contact.html" aria-current="page">Contact Us</a>
+    </nav>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="sr-only">Menu</span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a class="mobile-nav__link" href="index.html">Home</a>
+  <a class="mobile-nav__link" href="about.html">About Us</a>
+  <a class="mobile-nav__link" href="services.html">Our Services</a>
+  <a class="mobile-nav__link mobile-nav__link--sub" href="investing.html">Investing</a>
+  <a class="mobile-nav__link mobile-nav__link--sub" href="financial-planning.html">Financial Planning</a>
+  <a class="mobile-nav__link mobile-nav__link--sub" href="retirement-and-super.html">Retirement and Super</a>
+  <a class="mobile-nav__link" href="contact.html">Contact Us</a>
+</nav>
+
+<main id="main">
+
+  <section class="hero hero--inner">
+    <div class="hero__scrim-art" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="eyebrow hero__eyebrow">Contact us</p>
+      <h1 class="hero__title">Let's start with a conversation</h1>
+      <p class="lede hero__lede">
+        The first meeting is at our cost and carries no obligation. Tell us a little
+        about what you are working toward and we will be in touch.
+      </p>
+    </div>
+  </section>
+
+  <!-- ---------------- FORM + DETAILS ---------------- -->
+  <section class="section">
+    <div class="container">
+      <!-- The form is now the whole section, so it sits in a centred narrow
+           column rather than one half of a two-column split. -->
+      <div class="narrow mx-auto reveal">
+        <div>
+          <p class="eyebrow">Enquiry</p>
+          <h2 class="subheading" style="margin-bottom:var(--space-8);">Send us a message</h2>
+
+          <form class="form" data-validate novalidate>
+            <div class="field">
+              <label class="field__label" for="name">Full name <span aria-hidden="true">*</span></label>
+              <input class="field__input" type="text" id="name" name="name"
+                     autocomplete="name" required data-label="Full name">
+              <p class="field__error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email">Email address <span aria-hidden="true">*</span></label>
+              <input class="field__input" type="email" id="email" name="email"
+                     autocomplete="email" required data-label="Email address">
+              <p class="field__error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="phone">Phone</label>
+              <input class="field__input" type="tel" id="phone" name="phone"
+                     autocomplete="tel" data-label="Phone">
+              <p class="field__hint">Optional &mdash; if you would prefer we call you.</p>
+              <p class="field__error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="topic">What would you like to discuss?</label>
+              <select class="field__select" id="topic" name="topic" data-label="Topic">
+                <option value="">Please select</option>
+                <option>Retirement and Super</option>
+                <option>Financial Planning</option>
+                <option>Investing</option>
+                <option>Sustainable investing</option>
+                <option>Something else</option>
+              </select>
+              <p class="field__error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="message">Your message <span aria-hidden="true">*</span></label>
+              <textarea class="field__textarea" id="message" name="message"
+                        required data-label="Your message"></textarea>
+              <p class="field__hint">
+                Please do not include account numbers, tax file numbers or other
+                sensitive details in this form.
+              </p>
+              <p class="field__error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <p class="form__status" role="status" aria-live="polite" hidden></p>
+
+            <div>
+              <button class="btn btn--primary" type="submit">Send enquiry</button>
+            </div>
+
+            <p class="field__hint">
+              By submitting this form you consent to us contacting you about your
+              enquiry. See our Privacy Policy for how we handle your information.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__title">Partners in Planning</p>
+        <p style="max-width:32ch;">
+          Green financial planning for Melbourne families, professionals and
+          business owners.
+        </p>
+      </div>
+      <div>
+        <p class="footer__title">Explore</p>
+        <ul class="footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Legal</p>
+        <ul class="footer__list">
+          <li><a href="#">Financial Services Guide</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Complaints</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <p>
+        <strong>[Legal entity name] Pty Ltd ABN [00 000 000 000]</strong> is a
+        Corporate Authorised Representative (No. [000000]) of
+        [Licensee name] Pty Ltd, AFSL [000000].
+      </p>
+      <p class="footer__disclaimer">
+        The information on this website is general in nature only and does not take
+        into account your personal objectives, financial situation or needs. Before
+        acting on it, consider whether it is appropriate for you and read the relevant
+        Product Disclosure Statement. Past performance is not a reliable indicator of
+        future performance.
+      </p>
+      <p>&copy; <span id="year">2026</span> Partners in Planning. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

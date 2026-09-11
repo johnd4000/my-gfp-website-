@@ -1,0 +1,8 @@
+Drop your logo file in this folder, ideally as logo.svg
+
+Then in EACH of the 5 HTML files, replace the <a class="brand"> block with:
+
+  <a href="index.html"><img src="assets/logo/logo.svg" alt="Partners in Planning" class="brand__img"></a>
+
+See README.md > "Adding your logo" for details, including the note about
+light vs dark logo variants over the dark hero.
