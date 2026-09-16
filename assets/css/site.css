@@ -874,6 +874,61 @@ body.nav-open { overflow: hidden; }
   margin: 0;
 }
 
+/* Offices — photo card per location.
+
+   auto-fit rather than a fixed column count: there are seven offices, so
+   any fixed count leaves an orphan on the last row (3+3+1 is the worst of
+   them). Letting the grid pack naturally gives 4+3 on a wide screen and
+   degrades sensibly as it narrows. */
+.office-grid {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.office {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* PHOTO SLOT. Holds its 4:3 box whether it contains a placeholder or a
+   real <img>, so dropping photos in later cannot reflow the grid. */
+.office__media {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: var(--sage-tint);
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.office__media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Placeholder mark — muted on purpose. It should read as "a photo belongs
+   here", not compete with the real content around it. */
+.office__placeholder { color: var(--sage); opacity: 0.9; }
+
+.office__body { padding: var(--space-6); display: grid; gap: var(--space-2); }
+.office__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  margin: 0;
+}
+.office__address {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-style: normal;   /* it's an <address>, which browsers italicise */
+  line-height: 1.6;
+}
+.office__address a { color: inherit; text-decoration-color: var(--border); }
+.office__address a:hover { color: var(--green); }
+
 /* Numbered process steps */
 .steps { display: grid; gap: var(--space-12); counter-reset: step; }
 @media (min-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); gap: var(--space-16); } }
