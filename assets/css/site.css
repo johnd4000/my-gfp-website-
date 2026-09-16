@@ -786,6 +786,21 @@ body.nav-open { overflow: hidden; }
   .card-grid--4up { grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }
   .card-grid--4up .card { padding: var(--space-6); }
 }
+/* Inverted pyramid: three across the top, two centred beneath, with the
+   lower row offset by half a card so it sits in the gaps of the row above.
+
+   Six columns with every card spanning 2. The top row takes the odd lines
+   (1, 3, 5) and fills the width; the lower row takes the even ones (2, 4),
+   which gives both the centring and the offset. Five cards in a plain grid
+   would otherwise leave two stranded on a left-aligned second row. */
+@media (min-width: 900px) {
+  .card-grid--pyramid { grid-template-columns: repeat(6, 1fr); }
+  .card-grid--pyramid > :nth-child(1) { grid-column: 1 / span 2; }
+  .card-grid--pyramid > :nth-child(2) { grid-column: 3 / span 2; }
+  .card-grid--pyramid > :nth-child(3) { grid-column: 5 / span 2; }
+  .card-grid--pyramid > :nth-child(4) { grid-column: 2 / span 2; }
+  .card-grid--pyramid > :nth-child(5) { grid-column: 4 / span 2; }
+}
 .card {
   display: flex; flex-direction: column;
   gap: var(--space-4);
@@ -822,6 +837,131 @@ body.nav-open { overflow: hidden; }
 .card__title { font-size: var(--text-xl); }
 .card__body { color: var(--muted); font-size: var(--text-base); }
 .card--link { text-decoration: none; color: inherit; }
+
+/* Product partners — logo wall.
+
+   Forest tiles on the sage band, rather than the usual white card. Two of
+   the three providers publish only a reversed (white) lockup, so a light
+   tile would either hide them or force us to recolour someone else's mark.
+   Dark tiles let all three render as their brand intends, and Betashares'
+   orange holds up well against the forest.
+
+   Deliberately not a .card: partners are supporting evidence, not the
+   pitch, so there is no hover lift and no link affordance. Keeping the
+   section itself on the sage tint also avoids stacking a second dark slab
+   directly above the dark CTA. */
+.partner-grid { grid-template-columns: 1fr; display: grid; gap: var(--space-8); }
+@media (min-width: 760px) {
+  .partner-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  /* min-height keeps the three tiles level regardless of each lockup's
+     aspect ratio or how far its caption wraps. */
+  min-height: 170px;
+  padding: var(--space-8);
+  text-align: center;
+  background: var(--forest);
+  border: 1px solid var(--forest);
+  border-radius: var(--radius);
+}
+/* The three lockups have quite different aspect ratios — Vanguard and
+   Betashares are wide wordmarks, Australian Ethical is squarer. Capping
+   height and width separately keeps them optically similar in size rather
+   than mathematically equal, which is what actually reads as balanced. */
+.partner__logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 78%;
+  max-height: 40px;
+  object-fit: contain;
+}
+.partner__logo--tall { max-height: 56px; max-width: 58%; }
+.partner__note {
+  color: var(--sage);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Offices — photo card per location.
+
+   Seven cards laid out as an inverted pyramid: four across the top, three
+   centred beneath. The lower row is offset by half a card, so the cards
+   sit in the gaps of the row above rather than lining up in columns.
+
+   Done with an 8-column grid where every card spans 2. The top row starts
+   on the odd lines (1, 3, 5, 7) and fills the width; the lower row starts
+   on the even lines (2, 4, 6), which is what produces both the centring
+   and the half-card offset. Seven is otherwise an awkward number — any
+   plain grid strands an orphan on the last row. */
+.office-grid {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+@media (min-width: 1040px) {
+  .office-grid { grid-template-columns: repeat(8, 1fr); }
+  .office-grid > :nth-child(1) { grid-column: 1 / span 2; }
+  .office-grid > :nth-child(2) { grid-column: 3 / span 2; }
+  .office-grid > :nth-child(3) { grid-column: 5 / span 2; }
+  .office-grid > :nth-child(4) { grid-column: 7 / span 2; }
+  .office-grid > :nth-child(5) { grid-column: 2 / span 2; }
+  .office-grid > :nth-child(6) { grid-column: 4 / span 2; }
+  .office-grid > :nth-child(7) { grid-column: 6 / span 2; }
+}
+.office {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* PHOTO SLOT. Holds its 4:3 box whether it contains a placeholder or a
+   real <img>, so dropping photos in later cannot reflow the grid. */
+/* sage-bright, not sage-tint: the section itself is now on the tint, and a
+   placeholder in the same colour made the top half of each card dissolve
+   into the band. A step deeper keeps the card reading as a card until the
+   real photos land. */
+.office__media {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: var(--sage-bright);
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.office__media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Placeholder mark — muted on purpose. It should read as "a photo belongs
+   here", not compete with the real content around it. */
+.office__placeholder { color: var(--sage); opacity: 0.9; }
+
+.office__body { padding: var(--space-6); display: grid; gap: var(--space-2); }
+.office__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  margin: 0;
+}
+.office__address {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  font-style: normal;   /* it's an <address>, which browsers italicise */
+  line-height: 1.6;
+}
+.office__address a { color: inherit; text-decoration-color: var(--border); }
+.office__address a:hover { color: var(--green); }
 
 /* Numbered process steps */
 .steps { display: grid; gap: var(--space-12); counter-reset: step; }
@@ -938,6 +1078,9 @@ body.nav-open { overflow: hidden; }
 .reveal-group.is-visible > *:nth-child(4) { transition-delay: 180ms; }
 .reveal-group.is-visible > *:nth-child(5) { transition-delay: 240ms; }
 .reveal-group.is-visible > *:nth-child(6) { transition-delay: 300ms; }
+/* Seventh office card — without this it inherits 0ms and snaps in ahead of
+   the rest of its own row. */
+.reveal-group.is-visible > *:nth-child(7) { transition-delay: 360ms; }
 
 /* Motion is decorative only — render final state immediately when reduced */
 @media (prefers-reduced-motion: reduce) {

@@ -125,9 +125,12 @@
       <div class="narrow reveal" style="margin-bottom: var(--space-16);">
         <p class="eyebrow">Choosing a fund</p>
         <h2 class="heading">Which fund is right for you?</h2>
-        <p class="lede mt-8">Everyone's needs are different and no single solution fits all. These three steps are a good place to start.</p>
+        <p class="lede mt-8">Everyone's needs are different and no single solution fits all. These four steps are a good place to start.</p>
       </div>
-      <div class="steps steps--3 reveal-group">
+      <!-- Plain .steps, not .steps--3: with four steps a three-wide row
+           strands the last one on its own. The default is two across, so
+           these sit as a 2x2. -->
+      <div class="steps reveal-group">
         <div class="step">
           <span class="step__num">01</span>
           <div>
@@ -151,6 +154,15 @@
         <div class="step">
           <span class="step__num">03</span>
           <div>
+            <h3 class="step__title">Tell us which industries to avoid</h3>
+            <p class="step__body">A conversation and a short form are all it takes &mdash;
+              you tell us what you want no part of, and where you would rather your money
+              went.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step__num">04</span>
+          <div>
             <h3 class="step__title">Choose your timeframe</h3>
             <p class="step__body">Will you need the money within a year or two, or can you
               invest for five years or more? The longer your timeframe, the more risk you
@@ -158,7 +170,7 @@
           </div>
         </div>
       </div>
-      <p class="body-text mt-12">With these three answers, we can talk through which funds
+      <p class="body-text mt-12">With these four answers, we can talk through which funds
         may suit you. Always read the Product Disclosure Statement before investing.</p>
     </div>
   </section>
@@ -174,7 +186,9 @@
         </div>
       </div>
       <h3 class="subheading reveal" style="margin-bottom: var(--space-8);">Why consider one?</h3>
-      <div class="card-grid reveal-group">
+      <!-- Five cards as an inverted pyramid: three up top, two centred
+           beneath. See .card-grid--pyramid. -->
+      <div class="card-grid card-grid--pyramid reveal-group">
         <div class="card">
           <h3 class="card__title">Diversification</h3>
           <p class="card__body">Spreads your money across companies, industries, sectors and countries to reduce risk.</p>
