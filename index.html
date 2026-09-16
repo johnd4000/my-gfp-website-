@@ -307,56 +307,11 @@
     </div>
   </section>
 
-  <!-- ============================ PRODUCT PARTNERS ============================ -->
-  <!-- Sits between the sustainable-investing pitch and the CTA: having just
-       claimed we look past the label to the holdings, naming the platforms we
-       actually use is the evidence for it. Sage tint keeps the
-       cream / tint / dark rhythm running into the dark CTA below.
-
-       Logos are each provider's own reversed (white) lockup, which is why
-       the tiles are dark. Marks are trademarks of their respective owners;
-       if a provider's brand team asks for a change, the files live in
-       assets/logo/ and the sizing is handled by .partner__logo. -->
-  <section class="section on-tint">
-    <div class="container">
-      <div class="narrow reveal" style="margin-bottom: var(--space-16);">
-        <p class="eyebrow">Product partners</p>
-        <h2 class="heading">Who we invest through</h2>
-        <p class="lede mt-8">
-          We are not tied to any product issuer. These are the providers whose funds
-          most often earn a place in our clients&rsquo; portfolios, chosen on cost,
-          transparency and the quality of what sits underneath.
-        </p>
-      </div>
-
-      <!-- alt is the plain provider name: the logo is doing the work of a
-           wordmark here, so a screen reader needs the name, not "logo". -->
-      <div class="partner-grid reveal-group">
-        <div class="partner">
-          <img class="partner__logo" src="assets/logo/vanguard.svg"
-               alt="Vanguard" width="180" height="39" loading="lazy" decoding="async">
-          <p class="partner__note">Low-cost index funds and ETFs</p>
-        </div>
-
-        <div class="partner">
-          <img class="partner__logo" src="assets/logo/betashares.svg"
-               alt="Betashares" width="184" height="40" loading="lazy" decoding="async">
-          <p class="partner__note">Australian-managed ETFs</p>
-        </div>
-
-        <div class="partner">
-          <img class="partner__logo partner__logo--tall" src="assets/logo/australian-ethical.svg"
-               alt="Australian Ethical" width="174" height="64" loading="lazy" decoding="async">
-          <p class="partner__note">Screened ethical investment and super</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============================ OFFICES ============================ -->
-  <!-- Cream, between the sage partners band and the dark CTA, keeping the
-       tint / cream / dark rhythm. Locations and map links come from the
-       Office locations document.
+  <!-- Sage tint, between the cream sustainable-investing section and the
+       cream partners band, keeping the cream / tint / cream / dark rhythm
+       running into the CTA. Locations and map links come from the Office
+       locations document.
 
        PHOTO SLOT — each .office__media currently holds a placeholder mark.
        To add a real photo, replace the <svg> inside it with:
@@ -366,7 +321,7 @@
        is decorative and a screen reader would only repeat it. The 4:3 box
        and object-fit: cover are handled in CSS, so any reasonably sized
        photo will sit correctly without cropping the markup. -->
-  <section class="section">
+  <section class="section on-tint">
     <div class="container">
       <div class="narrow reveal" style="margin-bottom: var(--space-16);">
         <p class="eyebrow">Where to find us</p>
@@ -498,6 +453,52 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PRODUCT PARTNERS ============================ -->
+  <!-- The last thing before the CTA: having shown where we are, naming the
+       platforms we actually invest through is the closing piece of evidence.
+       Cream rather than tint, so it separates the sage offices band from the
+       dark CTA instead of stacking two toned surfaces together.
+
+       Logos are each provider's own reversed (white) lockup, which is why
+       the tiles are dark. Marks are trademarks of their respective owners;
+       if a provider's brand team asks for a change, the files live in
+       assets/logo/ and the sizing is handled by .partner__logo. -->
+  <section class="section">
+    <div class="container">
+      <div class="narrow reveal" style="margin-bottom: var(--space-16);">
+        <p class="eyebrow">Product partners</p>
+        <h2 class="heading">Who we invest through</h2>
+        <p class="lede mt-8">
+          We are not tied to any product issuer. These are the providers whose funds
+          most often earn a place in our clients&rsquo; portfolios, chosen on cost,
+          transparency and the quality of what sits underneath.
+        </p>
+      </div>
+
+      <!-- alt is the plain provider name: the logo is doing the work of a
+           wordmark here, so a screen reader needs the name, not "logo". -->
+      <div class="partner-grid reveal-group">
+        <div class="partner">
+          <img class="partner__logo" src="assets/logo/vanguard.svg"
+               alt="Vanguard" width="180" height="39" loading="lazy" decoding="async">
+          <p class="partner__note">Low-cost index funds and ETFs</p>
+        </div>
+
+        <div class="partner">
+          <img class="partner__logo" src="assets/logo/betashares.svg"
+               alt="Betashares" width="184" height="40" loading="lazy" decoding="async">
+          <p class="partner__note">Australian-managed ETFs</p>
+        </div>
+
+        <div class="partner">
+          <img class="partner__logo partner__logo--tall" src="assets/logo/australian-ethical.svg"
+               alt="Australian Ethical" width="174" height="64" loading="lazy" decoding="async">
+          <p class="partner__note">Screened ethical investment and super</p>
+        </div>
       </div>
     </div>
   </section>

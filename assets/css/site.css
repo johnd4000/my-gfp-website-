@@ -911,10 +911,14 @@ body.nav-open { overflow: hidden; }
 
 /* PHOTO SLOT. Holds its 4:3 box whether it contains a placeholder or a
    real <img>, so dropping photos in later cannot reflow the grid. */
+/* sage-bright, not sage-tint: the section itself is now on the tint, and a
+   placeholder in the same colour made the top half of each card dissolve
+   into the band. A step deeper keeps the card reading as a card until the
+   real photos land. */
 .office__media {
   aspect-ratio: 4 / 3;
   width: 100%;
-  background: var(--sage-tint);
+  background: var(--sage-bright);
   display: grid;
   place-items: center;
   border-bottom: 1px solid var(--border);
