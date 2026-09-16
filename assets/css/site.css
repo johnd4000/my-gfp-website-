@@ -823,6 +823,52 @@ body.nav-open { overflow: hidden; }
 .card__body { color: var(--muted); font-size: var(--text-base); }
 .card--link { text-decoration: none; color: inherit; }
 
+/* Product partners — logo wall.
+
+   Three tiles that hold a partner's logo. Until real logo files are dropped
+   in, each tile falls back to a wordmark set in the display face, so the
+   section is presentable without shipping anyone else's trademark.
+
+   The tiles are deliberately quiet: partners are supporting evidence, not
+   the pitch, so they get the same white card surface as .card but no hover
+   lift and no link affordance. */
+.partner-grid { grid-template-columns: 1fr; display: grid; gap: var(--space-8); }
+@media (min-width: 760px) {
+  .partner-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  /* min-height keeps the three tiles level whether they hold a tall logo,
+     a wide one, or a text wordmark. */
+  min-height: 150px;
+  padding: var(--space-8);
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+/* Constrain whatever logo file gets dropped in: cap the height so a tall
+   lockup cannot blow out the row, and contain so nothing is cropped. */
+.partner__logo {
+  max-width: 100%;
+  max-height: 52px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.partner__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--forest);
+  margin: 0;
+}
+.partner__note { color: var(--muted); font-size: var(--text-sm); margin: 0; }
+
 /* Numbered process steps */
 .steps { display: grid; gap: var(--space-12); counter-reset: step; }
 @media (min-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); gap: var(--space-16); } }
