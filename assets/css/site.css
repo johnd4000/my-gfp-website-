@@ -930,8 +930,10 @@ body.nav-open { overflow: hidden; }
    placeholder in the same colour made the top half of each card dissolve
    into the band. A step deeper keeps the card reading as a card until the
    real photos land. */
+/* Square, because the office photographs are all 1:1. A 4:3 slot would
+   have cropped roughly a quarter off the height of every one of them. */
 .office__media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   width: 100%;
   background: var(--sage-bright);
   display: grid;
