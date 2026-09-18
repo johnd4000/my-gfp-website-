@@ -68,9 +68,22 @@
 
 <main id="main">
 
+  <!-- Photograph fills the IMAGE SLOT documented on .hero__scrim-art, so the
+       gradient art it replaces is gone rather than stacked underneath. The
+       section keeps its forest background, which is what shows if the photo
+       never loads.
+
+       Decorative: the headline carries the meaning, so alt is empty and the
+       image is hidden from screen readers. Not lazy-loaded — it is the
+       largest element above the fold on this page. -->
   <section class="hero hero--inner">
-    <div class="hero__scrim-art" aria-hidden="true"></div>
-    <div class="hero__scrim" aria-hidden="true"></div>
+    <img class="hero__media" src="assets/img/about-hero.jpg" alt=""
+         width="2400" height="1350" fetchpriority="high" decoding="async" aria-hidden="true">
+    <!-- The heavier photographic scrim, not the standard one. This image is
+         bright — a wide teal sky across the upper two thirds — and the
+         standard scrim eases to 0.15 through its middle, which was tuned for
+         the dark gradient art rather than a lit photograph. -->
+    <div class="hero__scrim hero__scrim--media" aria-hidden="true"></div>
     <div class="container hero__content">
       <p class="eyebrow hero__eyebrow">About us</p>
       <h1 class="hero__title">Independent advice, plainly explained</h1>
@@ -133,6 +146,42 @@
     </div>
   </section>
 
+  <!-- ---------------- ETHICAL INVESTMENT ---------------- -->
+  <!-- Cream, following the cream Our story section. Two cream sections in a
+       row is fine where two dark ones would not be: cream is the page
+       background, so 12rem of section padding reads as a break rather than
+       one continuous slab. The values band below keeps its tint because
+       card grids sit on the tint everywhere else on the site.
+
+       Narrow column rather than a split with a photograph: it is a short,
+       plainly argued case, and Our story above already carries this page's
+       only image. -->
+  <section class="section">
+    <div class="container">
+      <div class="narrow reveal">
+        <p class="eyebrow">Ethical investing</p>
+        <h2 class="heading">Why we moved into ethical investment</h2>
+
+        <div class="stack-6 mt-12">
+          <p class="lede">
+            We moved into the ethical investment space because we believe that strong
+            financial positioning shouldn&rsquo;t come at the cost of your morals.
+          </p>
+          <p class="body-text">
+            Our approach is simple: we work with you to identify which industries clash
+            with your beliefs and tailor our advice accordingly, offering a range of
+            options &mdash; from excluding the headline offenders through to ground-up
+            impact investing.
+          </p>
+          <p class="body-text">
+            We believe your money can be a force for good, and working with us means
+            seeing that belief put into action.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ---------------- VALUES ---------------- -->
   <section class="section on-tint">
     <div class="container">
@@ -183,37 +232,6 @@
           <p class="card__body">
             We develop strong relationships with our clients by having annual catch ups
             so you know that we are ALWAYS here to help.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------------- ETHICAL INVESTMENT ---------------- -->
-  <!-- Cream, between the sage values band and the dark CTA, so the
-       cream / tint / cream / dark rhythm holds. Narrow column rather than a
-       split with a photograph: it is a short, plainly argued case, and the
-       Our story section above already carries this page's only image. -->
-  <section class="section">
-    <div class="container">
-      <div class="narrow reveal">
-        <p class="eyebrow">Ethical investing</p>
-        <h2 class="heading">Why we moved into ethical investment</h2>
-
-        <div class="stack-6 mt-12">
-          <p class="lede">
-            We moved into the ethical investment space because we believe that strong
-            financial positioning shouldn&rsquo;t come at the cost of your morals.
-          </p>
-          <p class="body-text">
-            Our approach is simple: we work with you to identify which industries clash
-            with your beliefs and tailor our advice accordingly, offering a range of
-            options &mdash; from excluding the headline offenders through to ground-up
-            impact investing.
-          </p>
-          <p class="body-text">
-            We believe your money can be a force for good, and working with us means
-            seeing that belief put into action.
           </p>
         </div>
       </div>
