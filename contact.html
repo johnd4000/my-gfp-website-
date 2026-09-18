@@ -82,6 +82,28 @@
     </div>
   </section>
 
+  <!-- ---------------- BOOK AN APPOINTMENT ----------------
+       Sits ahead of the enquiry form: picking a time is the more direct
+       route, so it leads. Sage tint against the cream form section below,
+       so the two read as distinct options rather than one long column.
+
+       External booking system, so new tab with rel="noopener". -->
+  <section class="section section--tight on-tint">
+    <div class="container">
+      <div class="narrow mx-auto reveal">
+        <p class="eyebrow">Appointments</p>
+        <h2 class="subheading" style="margin-bottom:var(--space-8);">Book an appointment</h2>
+        <p class="body-text">
+          Choose a time that suits you and we will take it from there.
+        </p>
+        <div class="mt-8">
+          <a class="btn btn--primary" href="https://partnersinplanningaus.setmore.com/book"
+             target="_blank" rel="noopener">Book an appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ---------------- FORM + DETAILS ---------------- -->
   <section class="section">
     <div class="container">
@@ -111,7 +133,7 @@
               <label class="field__label" for="phone">Phone</label>
               <input class="field__input" type="tel" id="phone" name="phone"
                      autocomplete="tel" data-label="Phone">
-              <p class="field__hint">Optional &mdash; if you would prefer we call you.</p>
+              <p class="field__hint">Optional. Add it if you would prefer we call you.</p>
               <p class="field__error" role="alert" aria-live="polite"></p>
             </div>
 
@@ -203,18 +225,15 @@
       <div>
         <p class="footer__title">Legal</p>
         <ul class="footer__list">
-          <li><a href="#">Financial Services Guide</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Complaints</a></li>
+          <!-- These three live on the practice's existing site, so they are
+               external links: new tab, with rel="noopener". -->
+          <li><a href="https://www.apartnerinplanning.com.au/financial-services-guide/" target="_blank" rel="noopener">Financial Services Guide</a></li>
+          <li><a href="https://www.apartnerinplanning.com.au/complaintsprivacy-policy/" target="_blank" rel="noopener">Privacy and Complaints</a></li>
+          <li><a href="https://www.apartnerinplanning.com.au/terms-and-conditions/" target="_blank" rel="noopener">Terms and Conditions</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__legal">
-      <p>
-        <strong>[Legal entity name] Pty Ltd ABN [00 000 000 000]</strong> is a
-        Corporate Authorised Representative (No. [000000]) of
-        [Licensee name] Pty Ltd, AFSL [000000].
-      </p>
       <p class="footer__disclaimer">
         The information on this website is general in nature only and does not take
         into account your personal objectives, financial situation or needs. Before
