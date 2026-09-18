@@ -70,6 +70,27 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   html { scroll-behavior: auto; }
 }
 
+/* Scrollbar. The browser default is a 15px grey slab on Windows, which reads
+   as chrome bolted to the side of the page rather than part of the design.
+   This slims it to 9px and tints it to the palette.
+
+   Deliberately slimmed rather than hidden: the bar is the only indication of
+   how long a page is and how far down you are, and on a page like the home
+   page — eight screens tall — taking that away leaves people with no sense of
+   position and nothing to drag. It is also the scroll affordance for anyone
+   using a mouse without a wheel. */
+html {
+  scrollbar-width: thin;                              /* Firefox */
+  scrollbar-color: rgba(18, 48, 31, 0.32) transparent;
+}
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(18, 48, 31, 0.32);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(18, 48, 31, 0.5); }
+
 body {
   margin: 0;
   background: var(--cream);
@@ -127,6 +148,25 @@ a { color: var(--green); text-decoration-thickness: 1px; text-underline-offset: 
 
 .narrow { max-width: var(--container-narrow); }
 
+/* Steps a narrow block to the right of the one above it, so the pair reads
+   as a diagonal movement down the page rather than a stacked column. The
+   container is 1240 and .narrow is 780, so margin-left:auto offsets it by
+   460px — enough to register as deliberate.
+
+   Only from 900px up. Below that the container is barely wider than the
+   column, so the offset would be a few stray pixels and read as a
+   misalignment rather than a device. */
+@media (min-width: 900px) {
+  /* Narrower than .narrow as well as right-aligned. The block is already
+     flush to the container's right edge, so the only way to push it further
+     right is to shorten it — 620px starts its left edge about 160px further
+     across than the 780px column above it, which deepens the diagonal. */
+  .narrow--offset { max-width: 620px; margin-left: auto; margin-top: var(--space-24); }
+}
+@media (max-width: 899px) {
+  .narrow--offset { margin-top: var(--space-16); }
+}
+
 .section { padding-block: var(--space-24); }
 @media (min-width: 768px) { .section { padding-block: var(--space-32); } }
 
@@ -160,6 +200,25 @@ a { color: var(--green); text-decoration-thickness: 1px; text-underline-offset: 
     rgba(232, 239, 228, 0.86) 35%,
     rgba(232, 239, 228, 0.74) 100%);
 }
+/* Cream wash, for a photo section that has to stay on the cream surface
+   rather than the sage tint. Used on the About page, where the section
+   below it is already on-tint and two toned bands would run together.
+
+   Paired with .section--photo-text, which darkens body copy in the section
+   from --muted to --forest. That pairing is the whole point: --muted over
+   this photograph only reaches 4.5:1 at a wash of about 0.84, which leaves
+   14% of the picture showing and reads as a blank cream panel. --forest
+   holds 5.78:1 at 0.66, so the wash can open up and the photograph is
+   actually visible. Measured over the image at 1014, 1440, 768 and 375
+   wide. Do not open it past 0.60 — --forest falls to 4.10:1 at 0.55. */
+.section__wash--cream {
+  background: linear-gradient(180deg,
+    rgba(253, 249, 244, 0.70) 0%,
+    rgba(253, 249, 244, 0.67) 45%,
+    rgba(253, 249, 244, 0.64) 100%);
+}
+.section--photo-text .lede,
+.section--photo-text .body-text { color: var(--forest); }
 .section--photo > .container { position: relative; z-index: 2; }
 
 /* --- 4. Typography components -------------------------------------------- */
@@ -998,6 +1057,77 @@ body.nav-open { overflow: hidden; }
 .step__title { font-size: var(--text-xl); margin-bottom: var(--space-3); }
 .step__body { color: var(--muted); }
 .on-dark .step__body { color: var(--sage); }
+
+/* Accreditation band.
+
+   Sits between the page content and the dark footer, on the sage tint.
+
+   Each mark sits on its own white tile. That is not decoration: every one
+   of these files ships with a baked-in white background and no
+   transparency, so placed directly on the tint each would read as a white
+   rectangle with ragged edges. A deliberate tile turns that into the
+   site's existing pattern — white cards on the sage tint, the same as
+   every card grid on the site.
+
+   Sizes are capped on BOTH axes rather than set to a uniform height. The
+   marks range from 0.78:1 (RIAA, nearly square) to 6.36:1 (APAA, a long
+   wordmark); a shared height would make APAA enormously wide and RIAA
+   tiny. Capping both keeps them optically similar in weight, which is what
+   reads as even, rather than mathematically equal. */
+.certs {
+  /* One step darker than --sage-tint, so the band separates from the cream
+     content above it. Not --sage: at that strength the label drops to
+     4.20:1, below AA. On this, --muted holds 5.71:1. */
+  background: var(--sage-bright);
+  border-top: 1px solid var(--border);
+  padding-block: var(--space-16);
+}
+.certs__label {
+  text-align: center;
+  margin: 0 0 var(--space-12);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.certs__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--space-6);
+}
+.certs__grid li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6) var(--space-8);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.certs__grid img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 54px;
+  max-width: 150px;
+  object-fit: contain;
+}
+/* RIAA is the one near-square mark; left on the shared cap it reads as a
+   postage stamp beside the wordmarks. */
+.certs__grid img.certs__mark--tall { max-height: 68px; max-width: 80px; }
+
+@media (max-width: 640px) {
+  .certs { padding-block: var(--space-12); }
+  .certs__grid { gap: var(--space-4); }
+  .certs__grid li { padding: var(--space-4) var(--space-6); }
+  .certs__grid img { max-height: 42px; max-width: 116px; }
+  .certs__grid img.certs__mark--tall { max-height: 54px; max-width: 64px; }
+}
 
 /* --- 11. Forms ----------------------------------------------------------- */
 .form { display: grid; gap: var(--space-6); }

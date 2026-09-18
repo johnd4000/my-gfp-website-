@@ -40,6 +40,7 @@
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <ul class="nav__sub" id="services-sub">
+          <li><a href="services.html">Our Services</a></li>
           <li><a href="investing.html">Investing</a></li>
           <li><a href="financial-planning.html">Financial Planning</a></li>
           <li><a href="retirement-and-super.html">Retirement and Super</a></li>
@@ -155,8 +156,17 @@
 
        Narrow column rather than a split with a photograph: it is a short,
        plainly argued case, and Our story above already carries this page's
-       only image. -->
-  <section class="section">
+       only image.
+
+       The creek sits behind the whole block under a cream wash, the same
+       device as the Services band on the home page. The wash is the cream
+       variant, not the sage one: the values band below is already on the
+       tint, and two toned bands in a row would run together. Decorative,
+       so alt is empty and it is hidden from screen readers. -->
+  <section class="section section--photo section--photo-text">
+    <img class="section__photo" src="assets/img/about-ethical-bg.jpg" alt=""
+         width="1800" height="1200" loading="lazy" decoding="async" aria-hidden="true">
+    <div class="section__wash section__wash--cream" aria-hidden="true"></div>
     <div class="container">
       <div class="narrow reveal">
         <p class="eyebrow">Ethical investing</p>
@@ -179,6 +189,32 @@
           </p>
         </div>
       </div>
+
+      <!-- Steps down and to the right of the block above rather than sitting
+           squarely beneath it, so the two read as one diagonal movement down
+           the page. Kept inside this section, not given its own: a separate
+           section would put 12rem between them and break that relationship.
+           Below 900px it returns to the normal left-aligned column, where an
+           indent would just look like a mistake. -->
+      <div class="narrow narrow--offset reveal">
+        <!-- .heading, not .subheading: sized to match the h2 above it. Still an
+             h3, because it is a sub-point of that section and the outline
+             should follow the structure rather than the type size. -->
+        <h3 class="heading">Our approach</h3>
+        <div class="stack-6 mt-8">
+          <p class="lede">
+            At Partners in Planning, we understand that everyone&rsquo;s values are
+            different. That&rsquo;s precisely why we work closely with you to tailor your
+            financial portfolio, meeting your investment goals while aligning with what
+            matters to you.
+          </p>
+          <p class="lede">
+            We have access to a broad suite of products spanning a range of risk
+            appetites and investment impacts, and we look forward to working with you to
+            find where you sit.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -187,7 +223,7 @@
     <div class="container">
       <div class="narrow reveal" style="margin-bottom: var(--space-16);">
         <p class="eyebrow">What we stand for</p>
-        <h2 class="heading">Our approach is guided by the following critical points</h2>
+        <h2 class="heading">Our principles</h2>
       </div>
       <!-- card-grid--4up: all four on one line from 1100px up, 2x2 on
            tablets, stacked on phones. -->
@@ -253,6 +289,29 @@
   </section>
 
 </main>
+
+<!-- ---------------- ACCREDITATIONS ----------------
+     Sits between the page content and the dark footer. White surface,
+     because each mark ships with a baked-in white background and no
+     transparency. Marks are the property of their respective bodies.
+
+     A list, not loose <img> tags: this is a set of related items, so a
+     screen reader should announce it as "list of 7". Each alt names the
+     accreditation in words, since the mark itself carries the meaning. -->
+<section class="certs" aria-labelledby="certs-label">
+  <div class="container">
+    <p class="certs__label" id="certs-label">Accreditations and memberships</p>
+    <ul class="certs__grid">
+      <li><img src="assets/logo/cert-cfp.jpg" alt="Certified Financial Planner" width="504" height="167" loading="lazy" decoding="async"></li>
+      <li><img src="assets/logo/cert-faaa.png" alt="Financial Advice Association Australia Professional Practice" width="615" height="161" loading="lazy" decoding="async"></li>
+      <li><img class="certs__mark--tall" src="assets/logo/cert-riaa.png" alt="Certified by the Responsible Investment Association Australasia" width="138" height="177" loading="lazy" decoding="async"></li>
+      <li><img src="assets/logo/cert-smsf.png" alt="Accredited SMSF Association Specialist" width="910" height="234" loading="lazy" decoding="async"></li>
+      <li><img src="assets/logo/cert-apaa.png" alt="Australian Professional Advisors Association" width="509" height="80" loading="lazy" decoding="async"></li>
+      <li><img src="assets/logo/cert-bfo.jpg" alt="Banking and Finance Oath signatory" width="312" height="142" loading="lazy" decoding="async"></li>
+      <li><img src="assets/logo/cert-aiofp.png" alt="Association of Independently Owned Financial Professionals adviser member" width="225" height="137" loading="lazy" decoding="async"></li>
+    </ul>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
