@@ -563,6 +563,21 @@ body.nav-open { overflow: hidden; }
     radial-gradient(85% 65% at 50% 50%, rgba(7, 26, 19, 0.30) 0%, rgba(7, 26, 19, 0.68) 100%);
 }
 
+/* For heroes whose photograph is bright enough that --media is not enough.
+   The investing hero is vivid sunlit green right where the text sits; under
+   the standard photographic scrim its sage lede measured 4.13:1, below AA.
+   These stops bring the worst case to 5.09:1, measured the same way: over
+   the actual text band, both scrim layers composited, across 375 / 768 /
+   1440 / 1920. Re-measure before lightening, or before swapping the photo. */
+.hero__scrim--media-bright {
+  background:
+    linear-gradient(180deg,
+      rgba(7, 26, 19, 0.75) 0%,
+      rgba(7, 26, 19, 0.62) 45%,
+      rgba(7, 26, 19, 0.84) 100%),
+    radial-gradient(85% 65% at 50% 50%, rgba(7, 26, 19, 0.34) 0%, rgba(7, 26, 19, 0.70) 100%);
+}
+
 .hero__content--center { text-align: center; }
 
 .hero__brand {

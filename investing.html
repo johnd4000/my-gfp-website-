@@ -68,9 +68,22 @@
 
 <main id="main">
 
+  <!-- Photograph fills the IMAGE SLOT documented on .hero__scrim-art, so
+       the gradient art it replaces is gone rather than stacked underneath.
+       The section keeps its forest background as the fallback.
+
+       Decorative: the headline carries the meaning, so alt is empty and
+       the image is hidden from screen readers. Not lazy-loaded — it is
+       the largest element above the fold on this page.
+
+       .hero__scrim--media-bright, not the standard scrim and not plain
+       --media either. This photograph is vivid sunlit green exactly where
+       the text sits; under --media the sage lede measured 4.13:1, below AA.
+       The -bright stops bring it to 5.09:1. -->
   <section class="hero hero--inner">
-    <div class="hero__scrim-art" aria-hidden="true"></div>
-    <div class="hero__scrim" aria-hidden="true"></div>
+    <img class="hero__media" src="assets/img/investing-hero.jpg" alt=""
+         width="2400" height="1350" fetchpriority="high" decoding="async" aria-hidden="true">
+    <div class="hero__scrim hero__scrim--media-bright" aria-hidden="true"></div>
     <div class="container hero__content">
       <p class="eyebrow hero__eyebrow">Our services</p>
       <h1 class="hero__title">Investing</h1>
